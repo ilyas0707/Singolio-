@@ -1,0 +1,83 @@
+.top-line
+	width: 100%
+	z-index: 5
+	position: fixed
+	background: $mainColor
+	border-bottom: 6px solid #373b4a
+	+tablet
+		padding-bottom: 1rem
+.logo
+	+column(.25)
+	padding-top: .7rem
+
+	&__link
+		text-decoration: none
+		color: #fff
+		font-family: $font-bold, sans-serif
+		text-transform: uppercase
+		font-size: rem(25px)
+
+		&:after
+			content: '*'
+			color: $secondColor
+.top-nav
+	+column(.75)
+	text-align: right
+
+	&__list
+		z-index: 5
+		background: $mainColor
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+		margin: 0
+		padding: 0
+		list-style-type: none
+		text-align: center
+		max-height: 0
+		overflow: hidden
+		transition: .7s
+		+tablet
+			position: static
+			max-height: none
+			width: auto
+			padding-top: 1rem
+		&.show
+			max-height: 400px
+	&__item
+		margin-bottom: .5rem
+		padding-bottom: .5rem
+		border-bottom: 1px solid rgba(#fff, 0.1)
+		+tablet
+			display: inline-block
+			border-bottom: none
+			padding: 0
+			margin: 0
+
+			&:after
+				content: '\2022'
+				opacity: .3
+
+			&:last-child
+				.top-nav__link
+					padding-right: 0
+				&:after
+					display: none
+		&:last-child
+			border-bottom: none
+			margin: 0
+
+		.top-nav__link:hover
+			color: $secondColor
+	&__link
+		font-family: $font-bold, sans-serif
+		text-transform: uppercase
+		color: #fff
+		text-decoration: none
+		+tablet
+			padding: 0 1rem
+.hamburger
+	+tablet
+		display: none
+
